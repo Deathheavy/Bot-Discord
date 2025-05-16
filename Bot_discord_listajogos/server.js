@@ -7,7 +7,7 @@ const PORT = 5500;
 const jogosPath = path.join(__dirname, 'jogos.json');
 
 app.use(express.json());
-app.use(express.static('public'));  // Para servir arquivos estáticos (a interface web)
+app.use(express.static('public'));
 
 
 // Rota para listar os jogos
