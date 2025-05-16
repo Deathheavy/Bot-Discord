@@ -1,0 +1,79 @@
+Pré-requisitos:
+Node.js instalado: https://nodejs.org/pt
+Conta no Discord
+
+1. Crie o bot no Discord Developer Portal
+Acesse: https://discord.com/developers/applications
+Clique em "New Application" e dê um nome
+Vá em "Bot" → "Add Bot"
+Marque a opção:
+
+Message Content Intent
+
+!!!!Copie o Token do Bot e salve para depois!!!!
+
+2. Dê permissões ao bot de ver mensagens, enviar mensagens e ver historico:
+
+Vá em OAuth2 → URL Generator
+Marque:
+
+Scopes: bot
+
+Bot Permissions: Send Messages, Read Messages e View Channel
+
+Copie a URL gerada e acesse no navegador
+Adicione o bot no seu servidor do Discord
+
+3. Estrutura do projeto
+Crie uma pasta do projeto depois abra o cmd como administrador na pasta criada e execute os seguintes comandos:
+
+
+npm init -y
+npm install discord.js
+npm install dotenv
+npm install express
+
+/PROJETO
+├── index.js
+├── .env
+├── package.json
+├── package-lock.json     
+└── node_modules/
+
+4. .env — Coloque seu token que você copiou no inicio
+
+DISCORD_TOKEN=SEUTOKENAQUI4423424252525252
+
+5. index.js — Código principal do bot
+   .env — local onde o seu token fica protegido
+
+6. Extras
+Site local para editar a lista
+Conexão com um grupo/canal criado também para editar a lista
+Separação da lista em um arquivo(jogos.json)
+Para rodar o site seguir o mesmo passo 8 porém usando o comando: node server.js
+
+/ADICOES
+├── public > index.html
+├── server.js
+├── jogos.json
+└── atalhos, imagens e arquivos .bat para manutenção do bot(você precisa editar para o caminho no seu PC)
+
+7. Antes de executar
+Adicionar o token do seu bot em .env
+Adicionar id(você precisa ligar o dev mode no discord para pegar o id) do canal de edição do bot(canal somente para nomesdosjogos+arquivosdosjogos) em index.js (LINHA 114)
+Abra o arquivo jogos.json com o bloco de notas e remova a linha de comentario que explica como adicionar jogos e sempre mantenha o formato exemplificado no arquivo
+Adicionar um status do bot também no index.js (LINHA 31)
+Atualizar os caminhos dos .bat com o bloco de notas para o local do seu bot caso for utilizar e mudar o formato de .txt para .bat
+Após editar os .bat você pode criar um atalho do bat de iniciar o bot, marcar para iniciar minimizado e depois usar o comando WIN+R e digitar shell:startup por fim basta colocar o atalho editado na pasta que abrir para iniciar o bot com o seu Sistema
+
+
+8. Rodar o bot(VERIFIQUE SE REALIZOU TODAS AS ETAPAS 1 - 7 ANTES DE RODAR!)
+Abra o cmd na pasta do projeto e digite:
+
+node index.js
+
+
+
+by: Deathheavy
+Criado para o meu aprendizado, use com cautela, nunca compartilhe o token do seu bot e por fim é de sua responsabilidade os links que você compartilha no bot
