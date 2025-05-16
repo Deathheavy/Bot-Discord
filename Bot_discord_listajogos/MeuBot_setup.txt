@@ -40,7 +40,7 @@ npm install express
 ├── package-lock.json     
 └── node_modules/
 
-4. .env — Coloque seu token que você copiou no inicio
+4. .env — Crie um arquivo na pasta do seu bot sem nome e no formato .env e coloque seu token que você copiou no inicio
 
 DISCORD_TOKEN=SEUTOKENAQUI4423424252525252
 
