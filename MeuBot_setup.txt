@@ -49,11 +49,11 @@ DISCORD_TOKEN=SEUTOKENAQUI4423424252525252
 
 6. Antes de executar
 Adicionar o token do seu bot em .env
-Abra o arquivo jogos.json e atualize os nomes e links com o bloco de notas e sempre mantenha o formato exemplificado no arquivo
+Abrir o arquivo jogos.json e atualizar os nomes e links com o bloco de notas e sempre manter o formato exemplificado no arquivo
 Atualizar o caminho do .bat com o bloco de notas para o local do seu bot caso for utilizar e mudar o formato de .txt para .bat
 
 
-7. Rodar o bot(VERIFIQUE SE REALIZOU TODAS AS ETAPAS 1 - 7 ANTES DE RODAR!)
+7. Rodar o bot(VERIFIQUE SE REALIZOU TODAS AS ETAPAS DE 1 A 6 ANTES DE RODAR!)
 Abra o cmd na pasta do projeto e digite:
 
 node index.js
