@@ -51,7 +51,7 @@ DISCORD_TOKEN=SEUTOKENAQUI4423424252525252
 Adicionar o token do seu bot em .env
 Abra o arquivo jogos.json com o bloco de notas e remova a linha de comentario que explica como adicionar jogos e sempre mantenha o formato exemplificado no arquivo
 Adicionar um status do bot também no index.js (LINHA 31)
-Atualizar os caminhos dos .bat com o bloco de notas para o local do seu bot caso for utilizar e mudar o formato de .txt para .bat
+Atualizar o caminho do .bat com o bloco de notas para o local do seu bot caso for utilizar e mudar o formato de .txt para .bat
 
 
 7. Rodar o bot(VERIFIQUE SE REALIZOU TODAS AS ETAPAS 1 - 7 ANTES DE RODAR!)
