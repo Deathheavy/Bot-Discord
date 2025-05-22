@@ -5,6 +5,8 @@ const { Client, GatewayIntentBits, ActivityType } = require('discord.js');
 
 const caminhoJogos = path.join(__dirname, 'jogos.json');
 const jogos = require(caminhoJogos);
+const cooldowns = new Map();
+const COOLDOWN_TEMPO = 6 * 60 * 60 * 1000; // 6 horas de cooldown no comando !lista
 
 // Função para salvar jogos direto do discord
 function salvarJogos() {
@@ -49,27 +51,34 @@ client.on('messageCreate', (message) => {
 
   // !lista – mostra todos os jogos
   else if (msg.toLowerCase() === '!lista') {
-    console.log(`[COMANDO] !lista usado por ${message.author.tag}`);
-    const linhas = [];
-    linhas.push('📋 **Jogos disponíveis:**\n');
-    for (const chave in jogos) {
-      const jogo = jogos[chave];
-      linhas.push(`• **${jogo.nome}** → [Download](${jogo.link})`);
-    }
+    const agora = Date.now();
+    const ultimoUso = cooldowns.get(message.author.id);
 
-    let bloco = '';
-    for (const linha of linhas) {
-      if (bloco.length + linha.length + 1 > 2000) {
-        message.channel.send(bloco);
-        bloco = '';
-      }
-      bloco += linha + '\n';
-    }
+  if (ultimoUso && (agora - ultimoUso) < COOLDOWN_TEMPO) {
+    const restanteMs = COOLDOWN_TEMPO - (agora - ultimoUso);
+    const horas = Math.floor(restanteMs / (1000 * 60 * 60));
+    const minutos = Math.floor((restanteMs % (1000 * 60 * 60)) / (1000 * 60));
+    return message.reply(`⏱️ Calma ae o ligeirinho! Use esse comando novamente em ${horas}h ${minutos}m.`);
+ }
 
-    if (bloco.length > 0) {
+  cooldowns.set(message.author.id, agora);
+
+  console.log(`[COMANDO] !lista usado por ${message.author.tag}`);
+  const linhas = ['📋 **Jogos disponíveis:**\n', ...Object.values(jogos).map(j => `• ${j.nome}`)];
+
+  let bloco = '';
+  for (const linha of linhas) {
+    if (bloco.length + linha.length + 1 > 2000) {
       message.channel.send(bloco);
+      bloco = '';
     }
+    bloco += linha + '\n';
   }
+
+  if (bloco.length > 0) {
+    message.channel.send(bloco);
+  }
+}
 
   // !ajuda – mostra os comandos disponíveis
 else if (msg.toLowerCase() === '!ajuda') {
