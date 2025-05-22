@@ -28,7 +28,7 @@ client.once('ready', () => {
   console.log(`Bot online como ${client.user.tag}`);
 
   client.user.setActivity({
-    name: 'MENSAGEMSTATUSAQUI',
+    name: '!ajuda',
     type: ActivityType.Playing
   }); 
 });
