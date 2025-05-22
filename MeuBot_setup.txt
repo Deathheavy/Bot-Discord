@@ -51,6 +51,7 @@ DISCORD_TOKEN=SEUTOKENAQUI4423424252525252
 Adicionar o token do seu bot em .env
 Abrir o arquivo jogos.json e atualizar os nomes e links com o bloco de notas e sempre manter o formato exemplificado no arquivo
 Atualizar o caminho do .bat com o bloco de notas para o local do seu bot caso for utilizar e mudar o formato de .txt para .bat
+Adicionar a id de um canal privado na linha 123 do index.js para que você possa adicionar jogos direto do Discord através do arquivo + nome
 
 
 7. Rodar o bot(VERIFIQUE SE REALIZOU TODAS AS ETAPAS DE 1 A 6 ANTES DE RODAR!)
